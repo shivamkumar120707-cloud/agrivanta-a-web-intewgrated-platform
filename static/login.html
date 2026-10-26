@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f6a43">
+  <title>Sign in | AgriVanta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--green:#236b43;--dark:#17472d;--ink:#1f2e23;--muted:#738075;--line:#e2ebe3}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:"DM Sans","Noto Sans Devanagari",sans-serif;color:var(--ink);background:#f3f7f1;display:grid;place-items:center;padding:24px}
+    .layout{width:min(100%,980px);min-height:590px;display:grid;grid-template-columns:1fr .92fr;background:white;border-radius:24px;overflow:hidden;box-shadow:0 24px 80px #153f2618}
+    .story{position:relative;padding:48px 42px;background:linear-gradient(155deg,#1d603d,#123a27);color:white;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+    .story:before,.story:after{content:"";position:absolute;border:1px solid #ffffff1c;border-radius:50%;width:360px;height:360px;right:-150px;bottom:-100px}.story:after{width:250px;height:250px;right:-70px;bottom:-45px}
+    .brand{display:flex;gap:12px;align-items:center;position:relative;z-index:1}.brand-icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:#ffffff1c;font-size:25px}.brand strong{display:block;font-size:21px;letter-spacing:-.5px}.brand small{display:block;margin-top:3px;color:#c4ddc9;font-size:11px;letter-spacing:.7px}
+    .story-copy{position:relative;z-index:1;margin:50px 0}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:10px;color:#b5d8be;font-weight:800}.story h1{font-size:37px;line-height:1.16;letter-spacing:-1.5px;margin:15px 0}.story p{max-width:330px;color:#d0e1d4;font-size:13px;line-height:1.8;margin:0}.feature-list{position:relative;z-index:1;display:grid;gap:13px;margin-top:30px}.feature{display:flex;gap:10px;align-items:center;color:#e1eee3;font-size:12px}.check{width:23px;height:23px;border-radius:8px;background:#ffffff17;display:grid;place-items:center}
+    .form-side{padding:50px 46px;display:flex;flex-direction:column;justify-content:center}.mobile-brand{display:none}.form-head{margin-bottom:26px}.form-head h2{font-size:27px;letter-spacing:-.9px;margin:0 0 8px}.form-head p{font-size:12px;color:var(--muted);line-height:1.6;margin:0}.tabs{display:grid;grid-template-columns:1fr 1fr;background:#f1f5f1;padding:4px;border-radius:10px;margin-bottom:22px}.tab{border:0;background:transparent;border-radius:7px;padding:10px;color:#728075;font:700 12px inherit;cursor:pointer}.tab.active{background:white;color:var(--green);box-shadow:0 2px 7px #183e2110}
+    form{display:grid;gap:15px}.field{display:grid;gap:7px}.field label{font-size:11px;font-weight:700;color:#46574a}.field input{width:100%;border:1px solid #dce6dd;border-radius:9px;padding:13px 14px;font:13px inherit;outline:none;background:#fff}.field input:focus{border-color:#77b88b;box-shadow:0 0 0 3px #e8f5eb}.submit{margin-top:5px;border:0;border-radius:9px;padding:14px;background:var(--green);color:white;font:700 13px inherit;cursor:pointer;box-shadow:0 5px 14px #236b4325}.submit:hover{background:var(--dark)}.message{display:none;padding:11px 12px;border-radius:8px;font-size:11px;line-height:1.5}.message.show{display:block}.message.error{background:#fff0ef;color:#a3302c}.message.success{background:#edf8ef;color:#256a3e}.privacy{margin-top:22px;text-align:center;color:#9aa59b;font-size:10px;line-height:1.6}.privacy span{color:var(--green)}.hidden{display:none!important}
+    @media(max-width:720px){body{padding:0;background:white}.layout{min-height:100vh;border-radius:0;grid-template-columns:1fr;box-shadow:none}.story{display:none}.form-side{padding:34px 25px;max-width:460px;width:100%;margin:auto}.mobile-brand{display:flex;margin-bottom:38px}.form-head h2{font-size:25px}}
+  </style>
+</head>
+<body>
+  <main class="layout">
+    <section class="story">
+      <div class="brand"><div class="brand-icon">🌱</div><div><strong>AgriVanta</strong><small>FROM SOIL TO SALE</small></div></div>
+      <div class="story-copy">
+        <div class="eyebrow">Smarter farming starts here</div>
+        <h1>Grow with<br>better decisions.</h1>
+        <p>Keep your farm information in one place, explore crop options, and use practical guidance for your next farming decision.</p>
+        <div class="feature-list"><div class="feature"><span class="check">✓</span> Soil and water report history</div><div class="feature"><span class="check">✓</span> Crop planning and local weather</div><div class="feature"><span class="check">✓</span> English and Hindi interface</div></div>
+      </div>
+      <div style="font-size:10px;color:#b8d1be;position:relative;z-index:1">An educational farmer-support project · AgriVanta</div>
+    </section>
+    <section class="form-side">
+      <div class="brand mobile-brand"><div class="brand-icon" style="background:#e8f4eb;color:#236b43">🌱</div><div><strong style="color:#1f2e23">AgriVanta</strong><small style="color:#7b8a7e">FROM SOIL TO SALE</small></div></div>
+      <div class="form-head"><h2 id="formTitle">Welcome back</h2><p id="formSubtitle">Sign in to continue to your farm dashboard.</p></div>
+      <div class="tabs"><button class="tab active" id="loginTab" type="button">Log in</button><button class="tab" id="registerTab" type="button">Create account</button></div>
+      <div id="message" class="message" role="status" aria-live="polite"></div>
+      <form id="authForm">
+        <div class="field hidden" id="nameField"><label for="name">Full name</label><input id="name" name="name" autocomplete="name" minlength="2" maxlength="100" placeholder="Your name"></div>
+        <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com"></div>
+        <div class="field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required minlength="8" maxlength="128" placeholder="At least 8 characters"></div>
+        <button class="submit" id="submitButton" type="submit">Log in to AgriVanta →</button>
+      </form>
+      <div class="privacy">Your account keeps your farm records separate from other accounts.<br><span>🌿 Built for farmer empowerment</span></div>
+    </section>
+  </main>
+<script>
+const $=s=>document.querySelector(s);let mode="login";
+function setMode(next){mode=next;const registering=mode==="register";$("#loginTab").classList.toggle("active",!registering);$("#registerTab").classList.toggle("active",registering);$("#nameField").classList.toggle("hidden",!registering);$("#name").required=registering;$("#password").autocomplete=registering?"new-password":"current-password";$("#formTitle").textContent=registering?"Create your account":"Welcome back";$("#formSubtitle").textContent=registering?"Start saving your farm information in one place.":"Sign in to continue to your farm dashboard." ;$("#submitButton").textContent=registering?"Create account →":"Log in to AgriVanta →";$("#message").className="message";$("#message").textContent=""}
+$("#loginTab").addEventListener("click",()=>setMode("login"));$("#registerTab").addEventListener("click",()=>setMode("register"));
+$("#authForm").addEventListener("submit",async e=>{e.preventDefault();const button=$("#submitButton");button.disabled=true;button.textContent=mode==="register"?"Creating account…":"Signing in…";const message=$("#message");message.className="message";try{const body={email:$("#email").value.trim(),password:$("#password").value};if(mode==="register")body.name=$("#name").value.trim();const res=await fetch(mode==="register"?"/api/auth/register":"/api/auth/login",{method:"POST",headers:{"Content-Type":"application/json"},credentials:"same-origin",body:JSON.stringify(body)});const data=await res.json().catch(()=>({}));if(!res.ok)throw new Error(data.detail||"Unable to sign in. Please try again.");message.textContent="Success! Opening your dashboard…";message.className="message success show";window.location.replace("/")}catch(err){message.textContent=err.message;message.className="message error show"}finally{button.disabled=false;button.textContent=mode==="register"?"Create account →":"Log in to AgriVanta →"}});
+</script>
+</body>
+</html>
