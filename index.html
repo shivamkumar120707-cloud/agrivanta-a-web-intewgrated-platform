@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f6a43">
+  <meta name="description" content="AgriVanta helps farmers make informed farming decisions.">
+  <title>AgriVanta — From Soil to Sale</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" data-page="dashboard">
+        <span class="brand-mark">🌱</span>
+        <span><strong>AgriVanta</strong><small>From Soil to Sale</small></span>
+      </a>
+      <div class="nav-label" data-i18n="workspace">WORKSPACE</div>
+      <nav class="nav">
+        <button class="nav-item active" data-page="dashboard"><span>▦</span><span data-i18n="dashboard">Dashboard</span></button>
+        <button class="nav-item" data-page="soil"><span>♧</span><span data-i18n="soil">Soil Health</span></button>
+        <button class="nav-item" data-page="water"><span>◉</span><span data-i18n="water">Water Quality</span></button>
+        <button class="nav-item" data-page="advisor"><span>✳</span><span data-i18n="advisor">AI Crop Advisor</span></button>
+        <button class="nav-item" data-page="weather"><span>☼</span><span data-i18n="weather">Weather</span></button>
+        <button class="nav-item" data-page="assistant"><span>✧</span><span data-i18n="assistant">Farming Assistant</span></button>
+        <button class="nav-item" data-page="reports"><span>▤</span><span data-i18n="reports">Reports</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><span class="help-icon">✦</span><strong data-i18n="needHelp">Need farming guidance?</strong><p data-i18n="helpText">Ask AgriVanta for practical next steps.</p><button class="text-button" data-page="assistant" data-i18n="askAssistant">Ask assistant →</button></div>
+        <div class="sidebar-foot">AgriVanta v1.0 · College Project</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuBtn" aria-label="Open navigation">☰</button>
+        <div class="breadcrumb"><span data-i18n="workspace">WORKSPACE</span><span class="crumb-slash">/</span><strong id="pageCrumb">Dashboard</strong></div>
+        <div class="top-actions">
+          <span class="status-pill"><i></i><span data-i18n="demoMode">Local project</span></span>
+          <button class="language-toggle" id="languageToggle" aria-label="Change language">हिंदी</button>
+          <span id="accountName" class="account-name">Farmer</span><button class="logout-btn" id="logoutBtn" type="button">Log out ↗</button>
+        </div>
+      </header>
+
+      <section class="page active" id="page-dashboard">
+        <div class="welcome-row">
+          <div><div class="eyebrow" data-i18n="overview">FARM OVERVIEW</div><h1 data-i18n="welcome">Good day, farmer <span class="wave">✦</span></h1><p class="muted" data-i18n="welcomeSub">Your farm, your data, smarter decisions.</p></div>
+          <button class="primary-btn" data-page="advisor"><span>＋</span> <span data-i18n="newRecommendation">New recommendation</span></button>
+        </div>
+        <div class="notice-banner"><span class="notice-icon">✦</span><div><strong data-i18n="welcomeNoticeTitle">Welcome to AgriVanta</strong><p data-i18n="welcomeNotice">Keep soil and water reports together, check local weather, and explore crop options for your farm.</p></div><button class="banner-close" id="dismissNotice" aria-label="Dismiss">×</button></div>
+        <div class="getting-started panel">
+          <div class="getting-started-heading"><div><div class="eyebrow" data-i18n="startEyebrow">A SIMPLE WAY TO BEGIN</div><h2 data-i18n="startTitle">Start with these 3 steps</h2><p class="muted" data-i18n="startSub">You can use the tools one by one. You do not need every detail at the beginning.</p></div><span class="start-badge">🌱</span></div>
+          <div class="start-steps">
+            <button class="start-step" data-page="soil"><span class="step-number">1</span><span><strong data-i18n="stepSoilTitle">Record your soil report</strong><small data-i18n="stepSoilText">Enter measurements from a real lab report, if you have one.</small></span><b>↗</b></button>
+            <button class="start-step" data-page="advisor"><span class="step-number">2</span><span><strong data-i18n="stepCropTitle">Explore crop options</strong><small data-i18n="stepCropText">Add your season, soil type and water availability.</small></span><b>↗</b></button>
+            <button class="start-step" data-page="weather"><span class="step-number">3</span><span><strong data-i18n="stepWeatherTitle">Check local weather</strong><small data-i18n="stepWeatherText">Search your village, town or district for a forecast.</small></span><b>↗</b></button>
+          </div>
+        </div>
+        <div class="section-heading"><div><h2 data-i18n="atGlance">Your farm at a glance</h2><p class="muted" data-i18n="atGlanceSub">A quick view of your saved farm information.</p></div></div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span data-i18n="soilReports">Soil reports</span><span class="stat-icon green">♧</span></div><div class="stat-number" id="soilCount">0</div><div class="stat-foot" data-i18n="soilSaved">Reports saved locally</div></article>
+          <article class="stat-card"><div class="stat-top"><span data-i18n="waterReports">Water reports</span><span class="stat-icon blue">◉</span></div><div class="stat-number" id="waterCount">0</div><div class="stat-foot" data-i18n="waterSaved">Reports saved locally</div></article>
+          <article class="stat-card"><div class="stat-top"><span data-i18n="cropPlans">Crop plans</span><span class="stat-icon amber">✳</span></div><div class="stat-number" id="recCount">0</div><div class="stat-foot" data-i18n="cropSaved">Recommendations created</div></article>
+          <article class="stat-card"><div class="stat-top"><span data-i18n="weatherCard">Local weather</span><span class="stat-icon purple">☼</span></div><div class="stat-number weather-stat" id="weatherMini">—</div><div class="stat-foot" data-i18n="weatherPrompt">Search your city or district</div></article>
+        </div>
+        <div class="content-grid">
+          <div class="panel">
+            <div class="panel-head"><div><h3 data-i18n="quickActions">Quick actions</h3><p class="muted" data-i18n="quickActionsSub">Start with the information you have.</p></div></div>
+            <div class="quick-grid">
+              <button class="quick-action" data-page="soil"><span class="quick-icon green">♧</span><strong data-i18n="addSoil">Add soil report</strong><small data-i18n="addSoilSub">Record lab measurements</small><b>↗</b></button>
+              <button class="quick-action" data-page="water"><span class="quick-icon blue">◉</span><strong data-i18n="addWater">Add water report</strong><small data-i18n="addWaterSub">Record water quality</small><b>↗</b></button>
+              <button class="quick-action" data-page="advisor"><span class="quick-icon amber">✳</span><strong data-i18n="planCrop">Plan a crop</strong><small data-i18n="planCropSub">Explore suitable options</small><b>↗</b></button>
+              <button class="quick-action" data-page="weather"><span class="quick-icon purple">☼</span><strong data-i18n="checkWeather">Check weather</strong><small data-i18n="checkWeatherSub">Look up a location</small><b>↗</b></button>
+            </div>
+          </div>
+          <div class="panel insight-panel">
+            <div class="panel-head"><div><h3 data-i18n="farmTip">A useful farm habit</h3><p class="muted" data-i18n="farmTipSub">Small steps make better decisions.</p></div><span class="tip-spark">✦</span></div>
+            <div class="tip-illustration">🌾</div>
+            <h4 data-i18n="tipTitle">Measure before you add</h4>
+            <p class="muted" data-i18n="tipBody">Use a recent soil test before making major fertilizer decisions. The right amount depends on the crop, soil, growth stage and local guidance.</p>
+            <button class="outline-btn" data-page="soil" data-i18n="viewSoil">Open soil health →</button>
+          </div>
+        </div>
+        <div class="panel recent-panel"><div class="panel-head"><div><h3 data-i18n="recentReports">Recent reports</h3><p class="muted" data-i18n="recentSub">Your latest saved soil and water entries.</p></div><button class="text-button" data-page="reports" data-i18n="viewAll">View all →</button></div><div id="recentReports" class="table-wrap"><div class="empty-state" data-i18n="noReports">No reports yet. Add your first soil or water report.</div></div></div>
+      </section>
+
+      <section class="page" id="page-soil">
+        <div class="page-title"><div class="eyebrow" data-i18n="soilEyebrow">UNDERSTAND YOUR LAND</div><h1 data-i18n="soilTitle">Soil health</h1><p class="muted" data-i18n="soilIntro">Save laboratory measurements and keep your soil history in one place.</p></div>
+        <div class="two-col">
+          <form class="panel form-panel" id="soilForm"><div class="panel-head"><div><h3 data-i18n="soilNew">Add soil test report</h3><p class="muted" data-i18n="soilNewSub">Enter values from a lab report, if available.</p></div></div>
+            <div class="form-grid"><label><span data-i18n="farmerName">Farmer name</span><input name="farmer_name" required placeholder="e.g. Ramesh Kumar"></label><label><span data-i18n="villageDistrict">Village / district</span><input name="location" required placeholder="e.g. Muzaffarpur, Bihar"></label><label><span data-i18n="crop">Crop</span><input name="crop" required placeholder="e.g. Wheat"></label><label><span>pH (0–14)</span><input name="ph" type="number" min="0" max="14" step=".1" placeholder="e.g. 6.8"></label><label><span data-i18n="nitrogen">Nitrogen (lab unit)</span><input name="nitrogen" type="number" min="0" step=".1" placeholder="Optional"></label><label><span data-i18n="phosphorus">Phosphorus (lab unit)</span><input name="phosphorus" type="number" min="0" step=".1" placeholder="Optional"></label><label><span data-i18n="potassium">Potassium (lab unit)</span><input name="potassium" type="number" min="0" step=".1" placeholder="Optional"></label><label class="full"><span data-i18n="notes">Notes</span><textarea name="notes" rows="3" placeholder="Lab name, report date, or observations"></textarea></label></div>
+            <div class="form-note">ⓘ <span data-i18n="soilDisclaimer">AgriVanta does not test samples. Enter values from a real lab report; units vary by laboratory.</span></div><button class="primary-btn" type="submit" data-i18n="saveSoil">Save soil report</button><div class="form-message" id="soilMessage" role="status"></div>
+          </form>
+          <div class="panel side-info"><div class="panel-head"><div><h3 data-i18n="readingSoil">Reading your soil report</h3><p class="muted" data-i18n="readingSoilSub">A few things to keep in mind.</p></div></div><div class="info-item"><span class="info-dot green"></span><div><strong>pH</strong><p data-i18n="phInfo">Indicates acidity or alkalinity. Crop preferences differ.</p></div></div><div class="info-item"><span class="info-dot blue"></span><div><strong data-i18n="nutrients">Nutrients</strong><p data-i18n="nutrientInfo">N, P and K results need their units and lab reference ranges for interpretation.</p></div></div><div class="info-item"><span class="info-dot amber"></span><div><strong data-i18n="nextStep">Next step</strong><p data-i18n="soilNext">Discuss unusual values with a soil-testing laboratory or local agriculture officer before applying amendments.</p></div></div><div class="soft-callout"><strong data-i18n="remember">Remember</strong><p data-i18n="rememberSoil">Missing values are not zero. Only enter measurements that appear on your report.</p></div></div>
+        </div>
+        <div class="panel"><div class="panel-head"><div><h3 data-i18n="savedSoil">Saved soil reports</h3></div></div><div id="soilList" class="table-wrap"></div></div>
+      </section>
+
+      <section class="page" id="page-water">
+        <div class="page-title"><div class="eyebrow" data-i18n="waterEyebrow">KNOW YOUR WATER</div><h1 data-i18n="waterTitle">Water quality</h1><p class="muted" data-i18n="waterIntro">Store measured water-quality values to support better irrigation decisions.</p></div>
+        <div class="two-col">
+          <form class="panel form-panel" id="waterForm"><div class="panel-head"><div><h3 data-i18n="waterNew">Add water test report</h3><p class="muted" data-i18n="waterNewSub">Use measurements from a lab or test report.</p></div></div><div class="form-grid"><label><span data-i18n="farmerName">Farmer name</span><input name="farmer_name" required placeholder="e.g. Ramesh Kumar"></label><label><span data-i18n="villageDistrict">Village / district</span><input name="location" required placeholder="e.g. Muzaffarpur, Bihar"></label><label><span data-i18n="waterSource">Water source</span><select name="source" required><option value="">Select source</option><option>Tube well</option><option>Canal</option><option>River</option><option>Pond</option><option>Rainwater</option><option>Other</option></select></label><label><span>pH (0–14)</span><input name="ph" type="number" min="0" max="14" step=".1" placeholder="Optional"></label><label><span>Electrical conductivity (EC)</span><input name="ec" type="number" min="0" step=".01" placeholder="Enter value and unit in notes"></label><label class="full"><span data-i18n="notes">Notes</span><textarea name="notes" rows="3" placeholder="Include measurement units and lab reference"></textarea></label></div><div class="form-note">ⓘ <span data-i18n="waterDisclaimer">Water suitability depends on several parameters, crop, soil and irrigation method.</span></div><button class="primary-btn" type="submit" data-i18n="saveWater">Save water report</button><div class="form-message" id="waterMessage" role="status"></div></form>
+          <div class="panel side-info"><div class="panel-head"><div><h3 data-i18n="waterMatters">Why water quality matters</h3><p class="muted" data-i18n="waterMattersSub">Water affects soil and crop performance.</p></div></div><div class="info-item"><span class="info-dot blue"></span><div><strong>pH</strong><p data-i18n="waterPhInfo">Helps describe acidity or alkalinity, but is not a complete water-quality test.</p></div></div><div class="info-item"><span class="info-dot green"></span><div><strong>EC</strong><p data-i18n="ecInfo">Electrical conductivity can help indicate dissolved salts when interpreted with the correct units.</p></div></div><div class="info-item"><span class="info-dot amber"></span><div><strong data-i18n="expertCheck">Expert check</strong><p data-i18n="waterExpert">Ask a qualified lab or agriculture specialist to interpret water quality for your crop and soil.</p></div></div></div>
+        </div>
+        <div class="panel"><div class="panel-head"><div><h3 data-i18n="savedWater">Saved water reports</h3></div></div><div id="waterList" class="table-wrap"></div></div>
+      </section>
+
+      <section class="page" id="page-advisor">
+        <div class="page-title"><div class="eyebrow" data-i18n="advisorEyebrow">PLAN WITH CONTEXT</div><h1 data-i18n="advisorTitle">Crop advisor</h1><p class="muted" data-i18n="advisorIntro">Explore crop options using your location, season, soil and water information.</p></div>
+        <div class="two-col advisor-layout">
+          <form class="panel form-panel" id="advisorForm"><div class="panel-head"><div><h3 data-i18n="farmDetails">Farm details</h3><p class="muted" data-i18n="farmDetailsSub">Share what you know; optional measurements can be left blank.</p></div></div><div class="form-grid"><label class="full"><span data-i18n="farmLocation">Farm location</span><input name="location" required placeholder="e.g. Muzaffarpur, Bihar"></label><label><span data-i18n="season">Season</span><select name="season" required><option value="Kharif">Kharif / Monsoon</option><option value="Rabi">Rabi / Winter</option><option value="Zaid">Zaid / Summer</option></select></label><label><span data-i18n="soilType">Soil type</span><select name="soil_type" required><option value="Loamy">Loamy</option><option value="Clay">Clay</option><option value="Sandy">Sandy</option><option value="Silty">Silty</option><option value="Unknown">Not sure</option></select></label><label><span data-i18n="waterAvailable">Water availability</span><select name="water" required><option value="Good">Good</option><option value="Moderate">Moderate</option><option value="Low">Low / limited</option><option value="Rainfed">Rainfed</option></select></label><label><span>Soil pH (optional)</span><input name="ph" type="number" min="0" max="14" step=".1" placeholder="e.g. 6.5"></label><label><span data-i18n="farmSize">Farm size (acres)</span><input name="farm_size" type="number" min="0" step=".1" placeholder="Optional"></label><label><span data-i18n="budget">Approx. budget (₹)</span><input name="budget" type="number" min="0" step="100" placeholder="Optional"></label></div><button class="primary-btn" type="submit"><span>✳</span> <span data-i18n="getCrops">Get crop suggestions</span></button><div class="form-message" id="advisorMessage" role="status"></div></form>
+          <div class="panel results-panel"><div class="panel-head"><div><h3 data-i18n="yourOptions">Your crop options</h3><p class="muted" data-i18n="yourOptionsSub">Recommendations will appear here.</p></div></div><div id="cropResults" class="empty-state"><div class="empty-icon">🌱</div><strong data-i18n="noCrops">No recommendations yet</strong><p data-i18n="noCropsSub">Fill in your farm details to explore possible crops.</p></div></div>
+        </div>
+        <div class="disclaimer-wide">ⓘ <span data-i18n="advisorDisclaimer">Starter recommendations use simple educational rules, not a validated agronomic model. Confirm crop choice with local agricultural experts before investing.</span></div>
+      </section>
+
+      <section class="page" id="page-weather">
+        <div class="page-title"><div class="eyebrow" data-i18n="weatherEyebrow">PLAN AROUND THE SKY</div><h1 data-i18n="weatherTitle">Local weather</h1><p class="muted" data-i18n="weatherIntro">Look up current conditions and a short forecast for a city or district.</p></div>
+        <form class="weather-search panel" id="weatherForm"><div class="weather-search-icon">⌕</div><label class="grow"><span data-i18n="locationSearch">City, village or district</span><input name="location" required placeholder="e.g. Muzaffarpur"></label><button class="primary-btn" type="submit" data-i18n="searchWeather">Check weather</button></form>
+        <div id="weatherResults" class="weather-results"><div class="panel empty-state"><div class="empty-icon">☼</div><strong data-i18n="weatherEmpty">Search for your area</strong><p data-i18n="weatherEmptySub">Weather is retrieved from Open-Meteo when an internet connection is available.</p></div></div>
+        <p class="source-note">Weather data source: Open-Meteo. Forecasts may change; check local alerts before time-sensitive farm work.</p>
+      </section>
+
+      <section class="page" id="page-assistant">
+        <div class="page-title"><div class="eyebrow" data-i18n="assistantEyebrow">ASK, LEARN, PLAN</div><h1 data-i18n="assistantTitle">Farming assistant</h1><p class="muted" data-i18n="assistantIntro">Ask a farming question in English or Hindi.</p></div>
+        <div class="chat-layout panel">
+          <div class="chat-header"><div class="assistant-avatar">✧</div><div><strong>AgriVanta Assistant</strong><small><span class="online-dot"></span> <span data-i18n="agriHelper">Agriculture information helper</span></small></div><span class="chat-language" id="chatLangLabel">English</span></div>
+          <div class="chat-messages" id="chatMessages"><div class="chat-bubble assistant"><div class="bubble-label">AgriVanta</div><span data-i18n="chatWelcome">Namaste! Ask me about soil health, crop planning, irrigation or farming practices. Share your location and crop for more relevant guidance.</span></div></div>
+          <div class="suggested-prompts"><button data-question-en="How can I prepare for soil testing?" data-question-hi="मिट्टी की जाँच के लिए कैसे तैयारी करूँ?"> <span data-i18n="suggest1">How do I prepare for soil testing?</span></button><button data-question-en="What details help choose a crop?" data-question-hi="फसल चुनने के लिए कौन-सी जानकारी चाहिए?"><span data-i18n="suggest2">What details help choose a crop?</span></button><button data-question-en="How should I plan irrigation?" data-question-hi="सिंचाई की योजना कैसे बनाऊँ?"><span data-i18n="suggest3">How should I plan irrigation?</span></button></div>
+          <form class="chat-compose" id="chatForm"><textarea name="message" rows="1" required placeholder="Ask your farming question..." data-i18n-placeholder="chatPlaceholder"></textarea><button class="send-btn" type="submit" aria-label="Send message">➤</button></form>
+          <div class="chat-foot" data-i18n="chatDisclaimer">Guidance is informational. For crop-specific or high-risk decisions, consult a qualified local expert.</div>
+        </div>
+      </section>
+
+      <section class="page" id="page-reports">
+        <div class="page-title"><div class="eyebrow" data-i18n="reportsEyebrow">YOUR FARM RECORDS</div><h1 data-i18n="reportsTitle">Reports & history</h1><p class="muted" data-i18n="reportsIntro">Review the reports and crop plans saved in this local project.</p></div>
+        <div class="panel"><div class="panel-head"><div><h3 data-i18n="allReports">All saved reports</h3><p class="muted" data-i18n="allReportsSub">Data is stored in the local SQLite database.</p></div><button class="outline-btn" id="refreshReports" data-i18n="refresh">Refresh</button></div><div id="allReports" class="table-wrap"></div></div>
+        <div class="future-modules"><div class="future-card"><span class="stat-icon purple">◎</span><strong data-i18n="cropHealthFuture">Crop photo analysis</strong><p data-i18n="cropHealthFutureSub">Planned module — image AI is not enabled in this version.</p><span class="tag">Planned</span></div><div class="future-card"><span class="stat-icon amber">₹</span><strong data-i18n="marketFuture">Market prices & buyers</strong><p data-i18n="marketFutureSub">Requires a reliable live data source before showing verified prices.</p><span class="tag">Planned</span></div></div>
+      </section>
+
+      <footer class="app-footer"><span>© 2026 AgriVanta</span><span data-i18n="footerNote">Built for farmer empowerment · Educational decision support</span><span> <a href="/docs" target="_blank" rel="noreferrer">API Docs ↗</a></span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
